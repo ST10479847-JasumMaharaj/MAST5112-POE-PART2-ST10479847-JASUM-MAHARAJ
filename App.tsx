@@ -584,3 +584,36 @@ const styles = StyleSheet.create({
   cancelButtonText: { color: "#ffffffff", fontWeight: "bold" },
 
 });
+
+
+//CODE ATTRIBUTION
+//TITLE: <SaveButton>
+//AUTHOR: Marmelab
+//Date:22/10/2025
+//AVALIABLE: https://marmelab.com/react-admin/SaveButton.html
+
+//CODE ATTRIBUTION
+//TITLE: Navigating Between Screens
+//AUTHOR: React Native
+//Date:22/10/2025
+//AVALIABLE: https://reactnative.dev/docs/navigation
+
+//CODE ATTRIBUTION
+//TITLE:  Style
+//AUTHOR: React Native
+//Date:22/10/2025
+//AVALIABLE: https://reactnative.dev/docs/style
+
+//CODE ATTRIBUTION
+//TITLE:  Catering food hd 8k wallpaper stock photographic image | Premium AI-generated image
+//AUTHOR: FreePik
+//Date:22/10/2025
+//AVALIABLE: https://za.pinterest.com/pin/341007003059471977/
+
+//CODE ATTRIBUTION
+//TITLE:  The IIE Mobile App Scripting MAST5112/p/w MODULE MANUAL 2025
+//AUTHOR: The Independant Institute of Education
+//Date:22/10/2025
+//AVALIABLE: https://advtechonline.sharepoint.com/:w:/r/sites/TertiaryStudents/_layouts/15/Doc.aspx?sourcedoc=%7BC4AAF478-96AC-4469-8005-F7CDC4A15EBB%7D&file=MAST5112MM.docx&action=default&mobileredirect=true
+
+
