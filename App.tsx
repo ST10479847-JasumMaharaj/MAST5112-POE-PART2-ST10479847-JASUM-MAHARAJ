@@ -132,13 +132,13 @@ function ManageMenuScreen(props: NativeStackScreenProps<RootStackParamList, "Man
         props.navigation.goBack();
 
       } else {
-
+       //alert message the user receives when they enter a value less than or equal to 0 for the price
         Alert.alert("Invalid Price - must be greater than 0");
 
       }
 
     } else {
-
+      //alert message the user receives when they don't fill out a field
       Alert.alert("Missing Fields", "Please fill all fields before saving.");
 
     }
