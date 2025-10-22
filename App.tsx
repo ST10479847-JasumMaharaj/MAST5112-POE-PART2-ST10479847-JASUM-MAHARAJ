@@ -40,7 +40,9 @@ import { Picker } from "@react-native-picker/picker";
 
 import { RootStackParamList, RestaurantItem } from "./type";
 
-
+//---------------------------------------------------------------------------------------
+//predefined menu items on the homescreen with the name, description, category, and price
+//---------------------------------------------------------------------------------------
 const predefinedItems: RestaurantItem[] = [
 
   {
@@ -83,7 +85,9 @@ const predefinedItems: RestaurantItem[] = [
 
 ];
 
-
+//-----------------------------------------------------------------------------
+//this screen allows the chef to add a new menu item
+//-----------------------------------------------------------------------------
 function ManageMenuScreen(props: NativeStackScreenProps<RootStackParamList, "ManageScreen">) {
 
   const [itemName, setItemName] = useState("");
@@ -96,7 +100,9 @@ function ManageMenuScreen(props: NativeStackScreenProps<RootStackParamList, "Man
 
   const [ingredients, setIngredients] = useState("");
 
-
+//-------------------------------------------------
+//this handles saving the new menu item added
+//-------------------------------------------------
   const handleSubmit = () => {
 
     if (itemName && description && category && price) {
@@ -116,9 +122,13 @@ function ManageMenuScreen(props: NativeStackScreenProps<RootStackParamList, "Man
           price: priceValue,
 
         };
-
+      //-------------------------------------------------------
+      //adds the new menu item to the home screen
+      //-------------------------------------------------------
         props.route.params.setItems([...props.route.params.items, newItem]);
-
+      //-------------------------------------------------------
+      //allows the user to go back to the home screen
+      //-------------------------------------------------------
         props.navigation.goBack();
 
       } else {
@@ -427,12 +437,9 @@ const styles = StyleSheet.create({
 
   subtitle: { textAlign: "center", color: "#8d6759ff", marginBottom: 15, fontSize: 15 },
 
-  totalText: {
-  fontWeight: "bold",
-  fontSize: 16,
-  marginVertical: 10,
-  color: "#333",
- },
+  totalText: { fontWeight: "bold", fontSize: 16, marginVertical: 10, color: "#333" },
+
+
   card: {
 
     backgroundColor: "#f0eed9ff",
