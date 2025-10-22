@@ -148,21 +148,23 @@ function ManageMenuScreen(props: NativeStackScreenProps<RootStackParamList, "Man
 
   return (
 
+    // KeyboardAvoidingView ensures inputs are visible when keyboard is open
     <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{ flex: 1 }}>
 
+      {/*Dismisses keyboard when user taps outside of the keyboard*/}
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 
         <ScrollView contentContainerStyle={styles.formContainer}>
 
           <Text style={styles.formHeader}>Add a New Menu Item</Text>
 
-
+          {/* Input fields */}
           <TextInput style={styles.input} placeholder="Item Name" value={itemName} onChangeText={setItemName} />
 
           <TextInput style={styles.input} placeholder="Description" value={description} onChangeText={setDescription} />
 
 
-          {/* ✅ Perfectly aligned picker */}
+          {/* category picker */}
 
           <View style={styles.pickerWrapper}>
 
@@ -185,7 +187,7 @@ function ManageMenuScreen(props: NativeStackScreenProps<RootStackParamList, "Man
                 itemStyle={{ height: 45 }}
 
               >
-
+              
                 <Picker.Item label="Select a Category" value="" color="#999" />
 
                 <Picker.Item label="Starters" value="Starters" />
@@ -200,7 +202,7 @@ function ManageMenuScreen(props: NativeStackScreenProps<RootStackParamList, "Man
 
           </View>
 
-
+          {/*price input*/}
           <TextInput
 
             style={styles.input}
@@ -217,7 +219,7 @@ function ManageMenuScreen(props: NativeStackScreenProps<RootStackParamList, "Man
 
 
 
-
+          {/*save and cancel button*/}
           <TouchableOpacity style={styles.saveButton} onPress={handleSubmit}>
 
             <Text style={styles.saveButtonText}>Save Menu Item</Text>
@@ -241,14 +243,14 @@ function ManageMenuScreen(props: NativeStackScreenProps<RootStackParamList, "Man
 
 }
 
-
+//homescreen: Displays the restaurant menu, allows removing items, and navigating to ManageMenuScreen (where the user adds the menu items)
 function HomeScreen(props: NativeStackScreenProps<RootStackParamList, "HomeScreen">) {
 
   const [items, setItems] = useState<RestaurantItem[]>(predefinedItems);
 
 
   const removeItem = (index: number) => {
-
+//confirms if the user wants to remove the item
     Alert.alert("Remove Item", "Are you sure you want to remove this item?", [
 
       { text: "Cancel", style: "cancel" },
@@ -267,7 +269,7 @@ function HomeScreen(props: NativeStackScreenProps<RootStackParamList, "HomeScree
       <Text style={styles.mainTitle}>Silver Spoon by Christoffel</Text>
 
       <Text style={styles.subtitle}>For the love of delicious food</Text>
-
+    {/*total menu items counter*/}
       <Text style={styles.totalText}>Total menu items: {items.length}</Text>
 
       <FlatList
@@ -291,7 +293,7 @@ function HomeScreen(props: NativeStackScreenProps<RootStackParamList, "HomeScree
                 {item.category} • R{item.price} 
 
               </Text>
-
+              {/*remove button for menu items*/}
               <TouchableOpacity style={styles.removeButton} onPress={() => removeItem(index)}>
 
                 <Text style={styles.removeText}>Remove</Text>
@@ -306,7 +308,7 @@ function HomeScreen(props: NativeStackScreenProps<RootStackParamList, "HomeScree
 
       />
 
-
+      {/*add new menu item button*/}
       <TouchableOpacity
 
         style={styles.addButton}
@@ -403,7 +405,7 @@ export default function App() {
 
 
 const styles = StyleSheet.create({
-
+//welcome screen styles
   welcomeContainer: { flex: 1, backgroundColor: "#fffd8eff" },
 
   heroImage: { width: "100%", height: "100%", position: "absolute" },
@@ -430,7 +432,7 @@ const styles = StyleSheet.create({
 
   startText: { color: "#070606ff", fontWeight: "bold", fontSize: 18 },
 
-
+//welcome screen styles
   container: { flex: 1, backgroundColor: "#d6f8e0ff", padding: 15 },
 
   mainTitle: { fontSize: 28, fontWeight: "800",fontStyle: 'italic', color: "#4b2e2b", textAlign: "center" },
@@ -439,7 +441,7 @@ const styles = StyleSheet.create({
 
   totalText: { fontWeight: "bold", fontSize: 16, marginVertical: 10, color: "#333" },
 
-
+//menu card styles
   card: {
 
     backgroundColor: "#f0eed9ff",
@@ -485,6 +487,7 @@ const styles = StyleSheet.create({
 
   removeText: { color: "#fff", fontWeight: "bold" },
 
+  //add new item button styling
   addButton: {
 
     backgroundColor: "#090241ff",
@@ -505,7 +508,7 @@ const styles = StyleSheet.create({
 
   addText: { color: "#fff8e1", fontSize: 18, fontWeight: "bold" },
 
-
+//form styling (on the screen where the user can add a new item to the menu)
   formContainer: { backgroundColor: "#f5f5f5", padding: 20 },
 
   formHeader: { fontSize: 24, color: "#4b2e2b", fontWeight: "bold", textAlign: "center", marginBottom: 20 },
@@ -571,7 +574,7 @@ const styles = StyleSheet.create({
 
   },
 
-
+//form buttons
   saveButton: { backgroundColor: "#090241ff", padding: 15, borderRadius: 10, marginTop: 15, alignItems: "center" },
 
   saveButtonText: { color: "#fff", fontWeight: "bold", fontSize: 16 },
