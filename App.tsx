@@ -94,11 +94,10 @@ function ManageMenuScreen(props: NativeStackScreenProps<RootStackParamList, "Man
 
   const [description, setDescription] = useState("");
 
-  const [category, setCategory] = useState<string>("Beverage");
+  const [category, setCategory] = useState<string>("");
 
   const [price, setPrice] = useState("");
 
-  const [ingredients, setIngredients] = useState("");
 
 //-------------------------------------------------
 //this handles saving the new menu item added
